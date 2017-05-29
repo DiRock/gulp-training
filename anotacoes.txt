@@ -1,11 +1,16 @@
 Instalando gulp (dependência local do desenvolvedor):
 npm install gulp@3.9.0 --save-dev
 
-Intalando imagemin:
+Instalando imagemin:
 npm install gulp-imagemin@2.3.0
+
+Instalando clean:
+npm install gulp-clean@0.3.1
+
 
 No arquivo package.json, inserir uma nova linha dentro de script para criar um alias para o gulp:
 "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp"
   },
+
