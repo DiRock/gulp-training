@@ -5,9 +5,8 @@ var gulp = require("gulp"),
 
 // copia os arquivos da fonte para distribuição
 gulp.task("copy", ["clean"], function(){
-	gulp.src("src/**/*")
+	return gulp.src("src/**/*")
 		.pipe(gulp.dest("dist"));
-
 });
 
 // remove o diretório dist
@@ -17,7 +16,7 @@ gulp.task("clean", function(){
 });
 
 // criação de uma tarefa
-gulp.task("minify-img", function(){
+gulp.task("minify-img", ["copy"], function(){
 
 	// seleciona os arquivos
 	gulp.src("src/img/**/*")
