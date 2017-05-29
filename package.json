@@ -1,0 +1,21 @@
+{
+  "name": "gulp-training",
+  "version": "1.0.0",
+  "description": "Treinamento referente às funcionalidades do Gulp",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiRock/gulp-training.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiRock/gulp-training/issues"
+  },
+  "homepage": "https://github.com/DiRock/gulp-training#readme"
+}
