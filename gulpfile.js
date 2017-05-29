@@ -4,7 +4,7 @@ var gulp = require("gulp"),
 	clean = require("gulp-clean");
 
 // copia os arquivos da fonte para distribuição
-gulp.task("copy", function(){
+gulp.task("copy", ["clean"], function(){
 	gulp.src("src/**/*")
 		.pipe(gulp.dest("dist"));
 
@@ -12,7 +12,7 @@ gulp.task("copy", function(){
 
 // remove o diretório dist
 gulp.task("clean", function(){
-	gulp.src("dist")
+	return gulp.src("dist")
 		.pipe(clean());
 });
 
