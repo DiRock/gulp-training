@@ -1,7 +1,10 @@
 // import das dependências
 var gulp = require("gulp"),
 	imagemin = require("gulp-imagemin"),
-	clean = require("gulp-clean");
+	clean = require("gulp-clean"),
+	usemin = require("gulp-usemin"),
+	cssmin = require("gulp-cssmin"),
+	uglify = require("gulp-uglify");
 
 // copia os arquivos da fonte para distribuição
 gulp.task("copy", ["clean"], function(){
@@ -24,4 +27,13 @@ gulp.task("minify-img", ["copy"], function(){
 		.pipe(imagemin())
 		// salva os arquivos minificados na pasta apontada
 		.pipe(gulp.dest("src/img"));
+});
+
+gulp.task("usemin", function(){
+	gulp.src("dist/**/*.html")
+	.pipe(usemin({
+		"js": [uglify],
+		"css": [cssmin]
+	}))
+	.pipe(gulp.dest("dist"));
 });
