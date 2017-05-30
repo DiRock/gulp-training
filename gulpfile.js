@@ -19,7 +19,7 @@ gulp.task("clean", function(){
 });
 
 // criação de uma tarefa
-gulp.task("minify-img", ["copy"], function(){
+gulp.task("minify-img", function(){
 
 	// seleciona os arquivos
 	gulp.src("src/img/**/*")
@@ -29,6 +29,7 @@ gulp.task("minify-img", ["copy"], function(){
 		.pipe(gulp.dest("src/img"));
 });
 
+// concatenação e minificação de arquivos
 gulp.task("usemin", function(){
 	gulp.src("dist/**/*.html")
 	.pipe(usemin({
@@ -36,4 +37,9 @@ gulp.task("usemin", function(){
 		"css": [cssmin]
 	}))
 	.pipe(gulp.dest("dist"));
+});
+
+// comando padrão
+gulp.task("default", ["copy"], function(){
+	gulp.start(["usemin", "minify-img"]);
 });
