@@ -50,6 +50,7 @@ gulp.task("server", function(){
 	browserSync.init({
 		server:{
 			baseDir: "src"
+
 		}
 	})
 
