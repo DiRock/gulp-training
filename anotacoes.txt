@@ -16,6 +16,9 @@ npm install gulp-cssmin@0.1.7 --save-dev
 Instalando uglify:
 npm install gulp-uglify@1.4.1 --save-dev
 
+Instalando browser-sync:
+npm install browser-sync@2.9.8 --save-dev
+
 No arquivo package.json, inserir uma nova linha dentro de script para criar um alias para o gulp:
 "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
