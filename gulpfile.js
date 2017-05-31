@@ -4,7 +4,8 @@ var gulp = require("gulp"),
 	clean = require("gulp-clean"),
 	usemin = require("gulp-usemin"),
 	cssmin = require("gulp-cssmin"),
-	uglify = require("gulp-uglify");
+	uglify = require("gulp-uglify"),
+	browserSync = require("browser-sync");
 
 // copia os arquivos da fonte para distribuição
 gulp.task("copy", ["clean"], function(){
@@ -43,3 +44,5 @@ gulp.task("usemin", function(){
 gulp.task("default", ["copy"], function(){
 	gulp.start(["usemin", "minify-img"]);
 });
+
+// atualização automática no navegador
