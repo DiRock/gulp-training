@@ -8,7 +8,8 @@ var gulp = require("gulp"),
 	browserSync = require("browser-sync"),
 	jshint = require("gulp-jshint"),
 	csslint = require("gulp-csslint"),
-	autoprefixer = require("gulp-autoprefixer");
+	autoprefixer = require("gulp-autoprefixer"),
+	less = require("gulp-less");
 
 // copia os arquivos da fonte para distribuição
 gulp.task("copy", ["clean"], function(){
@@ -70,4 +71,13 @@ gulp.task("server", function(){
 	});
 
 	gulp.watch("src/**/*").on("change", browserSync.reload);
+
+	gulp.watch('src/less/*.less').on('change', function (event) {
+        gulp.src(event.path)
+            .pipe(less().on('error', function (erro) {
+                console.log('Problema na compilação: '+erro.filename);
+                console.log(erro.message);
+            }))
+            .pipe(gulp.dest('src/css'));
+    });
 });

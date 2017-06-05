@@ -28,6 +28,9 @@ npm install gulp-csslint@0.2.0 --save-dev
 Instalando autoprefixer:
 npm install gulp-autoprefixer@3.0.2 --save-dev
 
+Instalando gulp-less
+npm install gulp-less@3.0.3 --save-dev
+
 No arquivo package.json, inserir uma nova linha dentro de script para criar um alias para o gulp:
 "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
