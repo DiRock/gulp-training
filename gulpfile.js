@@ -7,7 +7,8 @@ var gulp = require("gulp"),
 	uglify = require("gulp-uglify"),
 	browserSync = require("browser-sync"),
 	jshint = require("gulp-jshint"),
-	csslint = require("gulp-csslint");
+	csslint = require("gulp-csslint"),
+	autoprefixer = require("gulp-autoprefixer");
 
 // copia os arquivos da fonte para distribuição
 gulp.task("copy", ["clean"], function(){
@@ -70,4 +71,3 @@ gulp.task("server", function(){
 
 	gulp.watch("src/**/*").on("change", browserSync.reload);
 });
-
