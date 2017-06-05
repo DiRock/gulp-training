@@ -38,7 +38,7 @@ gulp.task("usemin", function(){
 	gulp.src("dist/**/*.html")
 	.pipe(usemin({
 		"js": [uglify],
-		"css": [cssmin]
+		"css": [autoprefixer, cssmin]
 	}))
 	.pipe(gulp.dest("dist"));
 });
